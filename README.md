@@ -1,0 +1,1 @@
+This repository contains learnings and projects for my six months Industrial training at Bluechip Technologies.
