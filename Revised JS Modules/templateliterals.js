@@ -33,7 +33,7 @@ function tag(literal, ...values) {
         case " plus ":
             result = values[0] + values[1];
             break;
-        case " minus ":
+        case " minus g":
             result = values[0] - values[1];
             break;
     }
