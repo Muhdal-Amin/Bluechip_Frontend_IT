@@ -8,15 +8,37 @@
  * 1. Defining Object Interfaces:
  */
 
-interface Person {
+interface Author {
     name: string;
     age: number;
 }
-let person3: Person = {
+
+interface author2 extends Author {
+    books: string[];
+}
+
+let author1 : Author = {
     name: "Alice",
     age: 25
 };
-console.log(person3.name, person3.age);
+console.log(author1.name, author1.age);
+
+interface Post {
+    title: string,
+    body: string,
+    tags: string[],
+    create_at: Date,
+    author: Author
+}
+
+const post1: Post = {
+    title: "Introduction to Typescript",
+    body: "Typescript is a typed superset of javascript that compiles to plain Javascript",
+    tags: ["typescript", "javascript", "tech"],
+    create_at: new Date(),
+    author: author1
+}; 
+console.log(post1.title, post1.body, post1.tags, post1.create_at, post1.author.name, post1.author.age);
 
 /**
  * 2. Defining Function Interfaces:
