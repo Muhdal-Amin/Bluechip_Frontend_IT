@@ -1,0 +1,235 @@
+/* Specific to the finder route */
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  margin-top: 50px;
+  color: #ff7f00;
+}
+
+/* ── Form shell ─────────────────────────────────────── */
+.form {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Search row ─────────────────────────────────────── */
+.searchRow {
+  display: flex;
+  gap: 10px;
+}
+
+.searchRow input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.searchRow input:focus {
+  border-color: #ff7f00;
+}
+
+.searchRow button {
+  padding: 10px 22px;
+  background: #ff7f00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  white-space: nowrap;
+}
+
+.searchRow button:hover:not(:disabled) {
+  background: #e06f00;
+}
+
+.searchRow button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Controls area ──────────────────────────────────── */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+  border-top: 1px solid #3e3e3e;
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controlLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+/* ── Pills (sort + orientation) ─────────────────────── */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid #555;
+  background: transparent;
+  color: #ccc;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.pill:hover {
+  border-color: #ff7f00;
+  color: #fff;
+}
+
+.pillActive {
+  background: #ff7f00;
+  border-color: #ff7f00;
+  color: #fff;
+}
+
+/* ── Color swatches ─────────────────────────────────── */
+.colorSwatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.18s, transform 0.18s;
+  background-color: transparent;
+}
+
+.swatch:hover {
+  border-color: #ff7f00;
+  transform: scale(1.15);
+}
+
+.swatchActive {
+  border-color: #ff7f00;
+  box-shadow: 0 0 0 2px #ff7f0055;
+  transform: scale(1.15);
+}
+
+/* "Any" swatch — text label */
+.swatchAny {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #ccc;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Black & white swatch — split fill */
+.swatchBW {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Named-color swatches inherit backgroundColor from inline style */
+.swatch[style] {
+  /* Nothing extra needed; each swatch gets its color via inline style */
+}
+
+/* ── Empty state ────────────────────────────────────── */
+.emptyState {
+  text-align: center;
+  color: #888;
+  margin-top: 40px;
+  font-size: 0.95rem;
+}
+
+/* ── Results grid ───────────────────────────────────── */
+.results {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.result-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  background: #2e2e2e;
+}
+
+.result-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Per-photo like count overlay ───────────────────── */
+.photoMeta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 10px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  display: flex;
+  justify-content: flex-end;
+}
+
+.likes {
+  font-size: 0.75rem;
+  color: #ffcc99;
+  font-weight: 600;
+}
