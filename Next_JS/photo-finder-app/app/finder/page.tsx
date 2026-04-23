@@ -32,7 +32,6 @@ export default function Finder() {
     if (query.trim() === '') return
 
     setIsLoading(true)
-    setResults([])
     setHasSearched(true)
 
 
@@ -74,7 +73,10 @@ export default function Finder() {
             type="text"
             placeholder="Search for photos…"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              setResults([])
+            }}
           />
           <button type="submit" disabled={isLoading}>
             {isLoading ? 'Searching…' : 'Search'}
