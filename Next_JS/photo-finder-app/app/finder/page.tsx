@@ -32,7 +32,9 @@ export default function Finder() {
     if (query.trim() === '') return
 
     setIsLoading(true)
+    setResults([])
     setHasSearched(true)
+
 
     try {
       const params = new URLSearchParams({
