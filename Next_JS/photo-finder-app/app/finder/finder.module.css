@@ -180,11 +180,6 @@
   pointer-events: none;
 }
 
-/* Named-color swatches inherit backgroundColor from inline style */
-.swatch[style] {
-  /* Nothing extra needed; each swatch gets its color via inline style */
-}
-
 /* ── Empty state ────────────────────────────────────── */
 .emptyState {
   text-align: center;
